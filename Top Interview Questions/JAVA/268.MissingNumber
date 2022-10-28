@@ -60,22 +60,22 @@
   //   }
 
 // Approach 5 //9ms(Using Binary Search)
-class Solution {
-    public int missingNumber(int[] nums) {
-       Arrays.sort(nums);
-        int first = 0;
-        int last = nums.length - 1;
+ class Solution {
+        public int missingNumber(int[] nums) {
+            Arrays.sort(nums);
+            int first = 0;
+            int last = nums.length - 1;
 
-        while (first <= last) {
-            int mid = (first + last) / 2;
-            if (nums[mid] == mid) {
-                first = mid + 1;
-            } else {
-                last = mid - 1;
+            while (first <= last) {
+                int mid = (first + last) / 2;
+                if (nums[mid] == mid) {
+                    first = mid + 1;
+                } else {
+                    last = mid - 1;
+                }
+
             }
-
+            return first;
         }
-        return first;
+
     }
-   
-}
