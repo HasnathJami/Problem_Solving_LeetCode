@@ -1,0 +1,81 @@
+// Approach 1 //8ms(Using Linear Search)
+// class Solution {
+//     public int missingNumber(int[] nums) {
+//         Arrays.sort(nums);
+//         for(int i=0;i<nums.length;i++){
+//             if(i!=nums[i])
+//             {
+//                 return i;
+//             }
+//         }
+//          return nums.length;
+//     }
+   
+// }
+
+//Approach2 //1ms (Using Sum Formula)
+// class Solution {
+//     public int missingNumber(int[] nums) {
+//         int partialSum = 0;
+//         int totalSum = ((nums.length + 1) * (nums.length)) / 2;
+
+//         for (int i = 0; i < nums.length; i++) {
+
+//             partialSum = partialSum + nums[i];
+//         }
+//         return totalSum - partialSum;
+//     }
+// }
+
+
+   //Approach 3 //0 ms (Using Bit Manipulation)
+//     class Solution {
+//         public int missingNumber(int[] nums) {
+//             int length = nums.length;
+//             int rangeXor = 1;
+//             int actualXor = nums[0];
+
+//             for (int i = 1; i < length; i++) {
+
+//                 actualXor = actualXor ^ nums[i];
+//             }
+
+//             for (int i = 2; i <= length; i++) {
+//                 rangeXor = rangeXor ^ i; //4
+//             }
+//             return actualXor ^ rangeXor;
+//         }
+//     }
+
+   //Approach 4 //1 ms (Using Bit Manipulation)
+  // class Solution {
+  //       public int missingNumber(int[] nums) {
+  //           int xor = 0;
+  //           int length = nums.length;
+  //           for (int i = 0; i < length; i++) {
+  //               xor = xor ^ nums[i] ^ i;
+  //           }
+  //           return xor ^ length;
+  //       }
+  //   }
+
+// Approach 5 //9ms(Using Binary Search)
+class Solution {
+    public int missingNumber(int[] nums) {
+       Arrays.sort(nums);
+        int first = 0;
+        int last = nums.length - 1;
+
+        while (first <= last) {
+            int mid = (first + last) / 2;
+            if (nums[mid] == mid) {
+                first = mid + 1;
+            } else {
+                last = mid - 1;
+            }
+
+        }
+        return first;
+    }
+   
+}
