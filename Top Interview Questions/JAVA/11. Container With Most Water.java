@@ -1,16 +1,16 @@
 class Solution {
-    public int findMinimum(int a, int b){
-        if(a>=b){
+    public int findMinimum(int a, int b) {
+        if(a>=b) {
             return b;
-        } else{
+        } else {
             return a;
         }
     }
     
-      public int findMaximum(int a, int b){
-        if(a>=b){
+      public int findMaximum(int a, int b) {
+        if(a >= b) {
             return a;
-        } else{
+        } else {
             return b;
         }
     }
@@ -22,16 +22,16 @@ class Solution {
         int first = 0;
         int last = height.length - 1;
         
-        while(first < last){
-            min = findMinimum(height[first],height[last]);
+        while(first < last) {
+            min = findMinimum(height[first], height[last]);
             //diff = last - first;
-            max = findMaximum(max,(last-first)*min);
-            if(min == height[first] && min == height[last]){
+            max = findMaximum(max, (last - first) * min);
+            if(min == height[first] && min == height[last]) {
                 first ++;
                 last --;
-            }else if (min == height[last]){
+            } else if (min == height[last]) {
                 last--;
-            }else{
+            } else {
                 first ++;
             }
         }
