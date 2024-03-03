@@ -1,4 +1,4 @@
-// User Two Pointer
+//  Two Pointer
 // class Solution {
 //     public int removeElement(int[] nums, int val) {
 //         int first = 0;
@@ -30,7 +30,7 @@
 //     }
 // }
 
-// User Two Pointer (slow and fast pointer)
+// Using Two Pointer (slow and fast pointer)
 class Solution {
     public int removeElement(int[] nums, int val) {
         int index = 0;
@@ -44,7 +44,7 @@ class Solution {
     }
 }
 
-//User array and occurances
+//Using array and occurances
 //formula = {
  //   valueIndex = currenValueIndex(i) - occurances
 //}
